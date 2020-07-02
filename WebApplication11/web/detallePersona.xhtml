@@ -1,0 +1,31 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<h1>Detalle de Persona</h1>
+</h:head>
+<h:body>
+<h:form>
+	<h:panelGrid columns="2">
+		<label>Nombres: </label>
+		<h:outputText value="#{detallePersona.persona.nombre}"/>
+		<label>Edad: </label>        
+           <h:outputText value=" #{detallePersona.persona.edad} "/>
+           
+           
+		<label>Correo: </label>
+		<h:outputText value="#{detallePersona.persona.correo} "/>
+		
+		<label>Direccion: </label>
+		<h:outputText value="#{detallePersona.persona.direccion} "/>
+	</h:panelGrid>
+</h:form>
+	<h:link value="Registrar Auto" outcome="registrarAuto" />
+	<br />
+	<h:link value="Ver todas personas con autos" outcome="autos" />
+</h:body>
+
+</html>

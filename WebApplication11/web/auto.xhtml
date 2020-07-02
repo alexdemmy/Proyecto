@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+
+			<label style=" font-family: 'Roboto Condensed'">Codigo:</label>
+			<h:inputText value="#{auto.codigoAuto}" id="codigo" style="border-radius:0.25rem ; background-color:#33A3FF ">
+			</h:inputText>
+			<label style=" font-family: 'Roboto Condensed'">Marca:</label>
+			
+                            <h:selectOneMenu value="#{auto.marca}"  style="border-radius:0.25rem; background-color:#2F5D83 ">
+    			<f:selectItem itemValue="Chevrolet" itemLabel="Chevrolet" />
+    			<f:selectItem itemValue="Aveo" itemLabel="Aveo"/>
+    			<f:selectItem itemValue="Hiundai" itemLabel="Hiundai" />
+    		</h:selectOneMenu> 
+		
+			<label style=" font-family: 'Roboto Condensed'">Año:</label>
+			<h:selectOneMenu value="#{auto.año}" required="true" style="border-radius:0.25rem ; background-color:#33A3FF ">
+				<f:selectItem itemValue="#{null}" itemLabel="-- Seleccione" />
+				<f:selectItems value="#{auto.años}" />
+			</h:selectOneMenu>
+						
+			<label style=" font-family: 'Roboto Condensed'">Placa:</label>
+			<h:inputText value="#{auto.placa}" id="placa" style="border-radius:0.25rem ; background-color:#33A3FF ">
+			<f:validateLength minimum="7" maximum="7"/>
+                        </h:inputText>
+                        <h:message for="placa" style="color:red" />
+
+		</h:panelGrid>
+
+		<div>
+			<h:commandButton action="#{auto.registrar(persona.codigo)}"
+				value="Registrar" />		
+			<input type="reset" value="Restablecer" />
+		</div>
+	</h:form>
+</h:body>
+
+</html>

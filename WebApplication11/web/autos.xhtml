@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="estilos.css"/>
+        <title>Autos registrados por persona</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{autos.autos}" var="tabla" styleClass="orders">
+                
+                <h:column>
+                    <f:facet name="header">Dueño del auto</f:facet>
+                    #{tabla.dueño},
+                </h:column>
+              
+                <h:column>
+                    
+                      <f:facet name="header"  >Marca</f:facet>
+                <h:outputText value="#{tabla.marca}" style="font-family: 'Roboto Condensed'; color: #2F5D83;"/>
+                     
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Placa</f:facet>
+                    <h:outputText value="#{tabla.placa}" style="font-family: 'Roboto Condensed'; color: #2F5D83;"/>
+                    
+                </h:column>
+                         
+                
+                
+                
+                
+                
+                
+            </h:dataTable> 
+            
+            
+            
+        </h:form>
+    </h:body>
+</html>
+

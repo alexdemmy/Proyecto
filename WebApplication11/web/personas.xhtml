@@ -1,0 +1,29 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+	<h:outputStylesheet library="css" name="estilos.css" />
+		<title>Personas</title>
+    </h:head>
+    <h:body>
+    	<h1>Personas Registradas</h1>
+    	<h:form>
+	    	<ul>
+	    		<ui:repeat var="persona" value="#{personasController.personas}">
+	    		<li>
+	    			<h:outputText value="#{persona.nombre}" /> 	    			
+	    			<h:outputText value="  #{persona.correo}" />
+	    			<h:commandLink action="detallePersona" value=" [Detalles]">
+	    				<f:setPropertyActionListener target="#{detallePersona.persona.nombre}" value="#{persona}" />
+	    			</h:commandLink>
+	   			</li>
+	   	  		</ui:repeat>
+	    	</ul>
+    	</h:form>
+    	<h:link value="Registrar" outcome="registrarPersona"/>
+    </h:body>
+
+</html>
